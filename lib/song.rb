@@ -25,7 +25,8 @@ class Song
         artist = parsed[0]
         name = parsed[1]
         song = Song.new(name)
-        song.artist = Artist.new(artist)
+        # song.artist = Artist.new(artist)
+        song.artist_name = artist
         song
      end
 end
