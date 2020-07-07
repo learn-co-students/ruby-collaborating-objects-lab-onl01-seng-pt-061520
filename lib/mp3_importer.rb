@@ -8,7 +8,8 @@ class MP3Importer
     end
 
     def files
-        Dir["#{path}/*"].map{|mp3| mp3.split("#{path}/")}.flatten.reject{|a| a.empty?}
+        #Dir["#{path}/*"].map{|mp3| mp3.split("#{path}/")}.flatten.reject{|a| a.empty?}
+        Dir.glob("#{path}/*.mp3").collect{ |f| f.gsub("#{path}/", "")}
     end
 
     def import
